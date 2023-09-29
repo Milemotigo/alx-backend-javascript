@@ -13,5 +13,5 @@ export function handleProfileSignup() {
         else{
             console.log("Error: N");
         }
-    })
+    });
 }
