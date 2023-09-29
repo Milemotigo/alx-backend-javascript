@@ -7,7 +7,7 @@
     )
     .catch(() => console.log('Signup system offline'));
  }
- handleProfileSignup();
+//  handleProfileSignup();
 // import { uploadPhoto, createUser } from './utils';
 
 // export default function handleProfileSignup() {
