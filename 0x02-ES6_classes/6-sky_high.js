@@ -1,29 +1,50 @@
-import Building from "./5-building";
+import Building from './5-building';
 
-export default class SkyHighBuilding {
-    constructor(sqft, floors) {
-        this._sqft = sqft;
-        this._floors = floors;
-    }
+export default class SkyHighBuilding extends Building {
+  constructor(sqft, floors) {
+    super(sqft);
+    this.floors = floors;
+  }
 
-    get sqft(){
-        return this._sqft;
-    }
-    set sqft(newSqft) {
-        this._sqft = newSqft;
-    }
+  get floors() {
+    return this._floors;
+  }
 
-    get floors(){
-        return this._floors;
-    }
-    set floors(newFloor) {
-        this._floors = newFloor;
-    }
+  set floors(value) {
+    this._floors = value;
+  }
 
-    evacuationWarningMessage() {
-        return `Evacuate slowly the ${this._floors} floors.`;
-    }
+  evacuationWarningMessage() {
+    return `Evacuate slowly the ${this.floors} floors`;
+  }
 }
+
+// import Building from "./5-building";
+
+// export default class SkyHighBuilding {
+//     constructor(sqft, floors) {
+//         this._sqft = sqft;
+//         this._floors = floors;
+//     }
+
+//     get sqft(){
+//         return this._sqft;
+//     }
+//     set sqft(newSqft) {
+//         this._sqft = newSqft;
+//     }
+
+//     get floors(){
+//         return this._floors;
+//     }
+//     set floors(newFloor) {
+//         this._floors = newFloor;
+//     }
+
+//     evacuationWarningMessage() {
+//         return `Evacuate slowly the ${this._floors} floors.`;
+//     }
+// }
 // const building = new SkyHighBuilding(140, 60);
 // console.log(building.sqft);
 // console.log(building.floors);
