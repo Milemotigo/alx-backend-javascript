@@ -10,4 +10,3 @@ export default function initializeRooms() {
     arr.push(room3);
     return arr;
 }
-console.log(initializeRooms());
