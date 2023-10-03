@@ -19,9 +19,3 @@ export default function updateUniqueItems(mappedItems) {
         }
     }
 }
-
-const map = groceriesList();
-console.log(map);
-
-updateUniqueItems(map)
-console.log(map);
