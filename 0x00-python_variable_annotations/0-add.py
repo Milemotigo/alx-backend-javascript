@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 def add(a: float, b: float) ->float:
     '''
-    This function takes two arguments and returns their concatenation as a string.
+    This function takes two arguments and returns their concatenation as a float.
 
     Args:
-        arg1 (int): The first integer argument.
-        arg2 (str): The second string argument.
+        a (float): The first float argument.
+        b (float): The second float argument.
 
     Returns:
-        str: The concatenated string.
+        float: The added floats.
     '''
     return a + b
