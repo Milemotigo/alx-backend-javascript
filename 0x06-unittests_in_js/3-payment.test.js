@@ -1,16 +1,18 @@
-const sendPaymentRequestToApi = require('./3-payment');
-const utils = require('./utils');
+// 3-payment.test.js
+
 const sinon = require('sinon');
+const Utils = require('./utils');
+const sendPaymentRequestToApi = require('./3-payment');
 
-const utilsObj = new utils();
+describe('sendPaymentRequestToApi', function () {
+    it('should spy the calculateNumber method', function () {
+        const spy = sinon.spy(Utils.prototype, 'calculateNumber');
+        const arg1 = 100,
+            arg2 = 20;
 
-describe('Test payment', function() {
-    it('it spy the calculateNumber method', function() {
-        let spy = sinon.spy(utilsObj, 'calculateNumber');
-        let arg1 = 10, arg2 = 30;
-        sendPaymentRequestToApi.calculateNumber(arg1, arg2)
-        // utilsObj.calculateNumber(arg1, arg2);
-        sinon.assert.calledWith(spy, "SUM", arg1, arg2);
+        sendPaymentRequestToApi(arg1, arg2);
+
+        sinon.assert.calledWith(spy, 'SUM', arg1, arg2);
         spy.restore();
     });
 });
