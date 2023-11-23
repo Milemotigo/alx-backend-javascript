@@ -1,16 +1,16 @@
 const sinon = require('sinon');
 const Utils = require('./utils');
+const chai = require('chai');
+const expect = chai.expect;
 const sendPaymentRequestToApi = require('./4-payment');
 
 describe('sendPaymentRequestToApi', function () {
-    it('should spy the calculateNumber method', function () {
-        const spy = sinon.spy(Utils.prototype, 'calculateNumber');
+    it('will always return a specific num', function () {
+        const stub = sinon.stub(Utils.prototype, 'calculateNumber');
         const arg1 = 100,
             arg2 = 20;
 
-        sendPaymentRequestToApi(arg1, arg2);
-
-        sinon.assert.calledWith(spy, 'SUM', arg1, arg2);
-        spy.restore();
+        stub.withArgs("SUM", arg1, arg2).returns (10);
+        expect(sendPaymentRequestToApi(arg1, arg2)).to.be.equal(10);
     });
 });
